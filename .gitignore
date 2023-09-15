@@ -1,0 +1,7 @@
+work/myenv/
+work/datasets/
+work/results/
+work/models/
+work/temp/
+.ipynb_checkpoints/
+.devcontainer/.env

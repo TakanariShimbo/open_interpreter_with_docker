@@ -1,0 +1,12 @@
+{
+  "name": "Dev Local Interpreter",
+  "dockerComposeFile": ["docker-compose-gpu.yml"],
+  "service": "local_interpreter_server",
+  "extensions": [
+    "ms-python.black-formatter",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "oderwat.indent-rainbow",
+  ],
+  "workspaceFolder": "/work",
+}

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  local_interpreter_server:
+    build: 
+      context: .
+      dockerfile: DockerfileGpu
+    image: python310_with_cuda118_cudnn8_on_ubuntu2204:1.0
+    container_name: container_local_interpreter_with_cuda
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - 8888:8888
+    volumes:
+      - ./../work:/work
+    working_dir: /work
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    tty: true
